@@ -5,7 +5,7 @@ check=`ip a s tun0 | egrep -o 'inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,
 
 # Grab third octet from tun0
 tunnel=`ip a s tun0 | egrep -o 'inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d ' ' -f 2`
-octet=`echo $tunnel | cut -d '.' -f 3`
+octet=`echo $tunnel | cut -d '.' -f 4`
 
 # Replace ips
 sed '/Begin-oswe-lab-ips/,/End-oswe-lab-ips/d' < /etc/hosts > newhosts
