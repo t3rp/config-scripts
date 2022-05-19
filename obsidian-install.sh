@@ -7,7 +7,7 @@ dl_url=$( curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/rele
 	| grep "browser_download_url.*AppImage" | tail -n 1 | cut -d '"' -f 4 )
 
 # Download icon & appimage
-printf "Downloadings files...\n"
+printf "Downloading files...\n"
 curl --location --output Obsidian.AppImage "$dl_url"
 curl --location --output obsidian.png "$icon_url"
 
